@@ -1,7 +1,8 @@
-Learn make and makefiles
-==========================
-1. Introduction to make and makefile
-    * Make structure.
+Learn GNU make
+===============
+
+1. Introduction to GNU make.
+    * File structure.
     * Build an executable.
 2. Structuring sources into sub-directories.
 3. Building shared libraries.
@@ -9,6 +10,7 @@ Learn make and makefiles
 
 Author
 ========
+ngendah
 
 
 LICENSE
