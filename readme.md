@@ -6,7 +6,7 @@ Learn GNU make
     * Build an executable.
 2. Structuring sources into sub-directories.
 3. Building shared libraries.
-4. Putting all together.
+4. Putting it all together.
 
 Author
 ========
