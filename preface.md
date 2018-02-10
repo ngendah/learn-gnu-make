@@ -1,8 +1,16 @@
+Learn make and makefiles
+==========================
 1. Introduction to make and makefile
-    - Building an executable with make.
-2. Using variables on a makefile.
-3. Structuring source file into sub-directories.
-4. Building shared libraries.
-5. Building a static library.
-6. Linking executables to shared/static library.
-7. 
+    * Make structure.
+    * Build an executable.
+2. Structuring sources into sub-directories.
+3. Building shared libraries.
+4. Putting all together.
+
+Author
+========
+
+
+LICENSE
+==========
+Licensed [BY-NC-SA Creative Commons](https://creativecommons.org/licenses/by-nc-sa/4.0/)
