@@ -1,4 +1,4 @@
-SUBDIRS = app1 app2
+SUBDIRS = lib app
 
 .PHONY: subdirs $(SUBDIRS)
 
@@ -7,16 +7,11 @@ SUBDIRS = app1 app2
  $(SUBDIRS):
 	$(MAKE) -C $@
 
-app2: app1
+app: lib
 
 .CLEAN: clean
-.CLEANALL: cleanall
 
 clean:
-	$(MAKE) clean -C app1
-	$(MAKE) clean -C app2
-
-cleanall:
 	for dir in $(SUBDIRS); do \
 		$(MAKE) clean -C $$dir; \
 	done
