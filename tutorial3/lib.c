@@ -1,6 +1,6 @@
 #include "lib.h"
 
-float add(float x, float y)
+float add(const float x, const float y)
 {
     return x + y;
 }
