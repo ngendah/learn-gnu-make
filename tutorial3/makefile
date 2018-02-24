@@ -1,10 +1,13 @@
 CFLAGS = -fPIC -Wall -Wextra -g
 LDFLAGS = -shared
+VERSION = 1.0.0
 
-all: lib
+all: libapp
 
-lib: lib.o
-	$(CC) -o "$@.so" $^ $(CFLAGS) $(LDFLAGS)
+libapp: lib.o
+	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o$@.so.$(VERSION) -Wl,-soname,$@.so.1
+	ldconfig -n .
+	ln -s $@.so.1 $@.so	
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -12,4 +15,4 @@ lib: lib.o
 .PHONY: clean
 
 clean:
-	rm *.o lib*
+	rm *.o libapp*
