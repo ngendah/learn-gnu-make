@@ -6,7 +6,6 @@ My hope is that by the end of the tutorials you will have sufficient knowledge o
 
 1. [Introduction to GNU make](./introduction.md).
     * GNU make concepts.
-    * File structure.
 2. Build an executable.
     * Build enviroments.
 3. Building an executable with sources structured in sub-directories.

@@ -1,7 +1,7 @@
 # Introduction
 When I first learnt to write my first program in C, it was a single C source file and constituted of a main function that printed to the screen the words 'hello world!'. It was compiled and built by executing the command `$cc -o <outputfile-name> <source file name>`. I have included it as my [first tutorial](tutorial0/hello_world.c).
-This was a simple program, later on, to build something more useful and with a couple of more source files, an efficient approach would be required. 
-Use of GNU make is an example of an efficient approach, to compilation, building and maintaince of a project. Think of it as a chef who is given a recipe and ingredients and the goal is to make a culinary delicacy. The recipe is called a makefile, ingredients the various source files and dependent libraries required to make the delights, our targets.
+This was a simple program, later on, to build something more useful and with a couple of more source files, i required a more efficient approach. And that is why and when I learned the use of GNU make. 
+It simplifies the compilation, building and maintaince of a project. Think of it as a chef who is given a recipe and ingredients and the goal is to make a culinary delicacy. The recipe is called a makefile, ingredients the various source files and dependent libraries, referred to as prerequisites, required to make the delights, our targets.
 GNU make, is therefore, a build automation tool which follows a set of rules telling it how, from a list of input source files and dependencies its to build targets.
 
 # Key concepts
@@ -13,7 +13,7 @@ A makefile is text file consisting of rules; in a predefined format, comments, v
 Make rules is a set of instructions telling it what to do and are classified into:
 
 * Static rules
-    This are rules that specify mutiple targets to be built by the commands. The rule format is;
+    This are rules that specify mutiple targets(filenames with extensions) to be built by the commands. The rule format is;
     ```
     targets: target-pattern: prerequisites-pattern
         ->command; command
@@ -28,10 +28,12 @@ Make rules is a set of instructions telling it what to do and are classified int
        ->command; command
        ->command
     ```
+   since implicit rules work without specific filenames, commands make use of automatic variables to process pre-requisites and produce targets.
 
 In general, a rule is composed of 3 key elements:
 
 1. Targets, classified into:
+
 
     * file targets
 
@@ -67,11 +69,11 @@ There are 3 type of variables:
 
 * User defined
 
-	They are variables defined by the user, and be categorized into:
+	They are variables defined by the makefile author and be categorized into:
 	
 	* Recursive variables
 	
-		They contain reference to other variables, and the values are set using the recursive operator `=`. The variable value is evaluated when its used.
+		They contain reference to other variables, and the values are set using the recursive operator `=`. The variable value is evaluated when the makefile is being executed.
 		```
 			VAR_NAME = value
 		```
@@ -80,17 +82,47 @@ There are 3 type of variables:
 	
 		They contain single values determined at the time of declaration. Its values are set using the simple operator `=` or using the `define` keyword.
 		```
-			VAR_NAME := value
-			
-			define VAR_NAME
+			VAR_NAME := value #format 1
+
+			define VAR_NAME #format 2
 			value
 			endef
 		```
 	Variable also can altered using the append operator, `=+`, or truncate operator, `=-`. 
 
-* Common variables
+* Predefined variables
 
-* Automatic
+	Predefined variables are variables inbuilt in make, and have special meanings. Some of this variable refer to programs whilst other are common arguments to this programs.
+	
+	Relevant for this tutorials, mostly commonly used are:
+	
+	|variable name | description  |
+	|---- | ---- |
+	|CC | C compiler |
+	|CXX | C++ compiler |
+	|CPP | C pre-processor |
+	|AS | Assembly compiler |
+	|CFLAGS | Flags passed to the C compiler |
+	|CXXFLAGS | Flags passed to the C++ compiler |
+	|CPPFLAGS | Flags passed to the C pre-processor compiler |
+	|LDFLAGS | Flags passed to the linker |
+	
+	To view a listing of predefined variable execute make with -p option on a directory without a makefile.
 
+* Automatic Variable
+    
+	This are variables set during implicit rules processing, when a rule has been matched to its prerequisites and targets.
 	
+	Relevant for this tutorials, mostly commonly used are:
 	
+	|variable name | description |
+	|---- |  ----- |
+	|$@ | The target file name. |
+	|$< | The file name of the first prerequisite in the rule. |
+	|$^ | Space separated list of all the prerequisites. |
+	|$* | The file name without its extension, referred to as stem, of the target. |
+
+## Conditional statements
+
+They are control statements altering the linear make flow execution.
+
