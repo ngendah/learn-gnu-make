@@ -1,5 +1,6 @@
 */main
 */**/main
+*/**/hello_app
 *.o
 *.so*
 .cproject
