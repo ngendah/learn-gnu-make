@@ -1,5 +1,7 @@
+bindir?=/usr/bin
+TARGET=$(destdir)$(bindir)
 APP_NAME = hello_app
-CFLAGS = -g -Wall
+CFLAGS = -Wall
 LIB_APP_PATH = ../lib
 INCLUDES = -I $(LIB_APP_PATH)
 LDFLAGS = -L $(LIB_APP_PATH) -lapp -Wl,--enable-new-dtags
@@ -15,10 +17,11 @@ $(APP_NAME): main.o
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 	
 install:
-	cp ./$(APP_NAME) %{bindir}
+	install -m 0755 -d ${TARGET}
+	install -m 0755 ${APP_NAME} ${TARGET}/
 
 uninstall:
-	rm -f %{bindir}/$(APP_NAME)
+	rm -f ${TARGET}/$(APP_NAME)
 
 clean:
-	-rm *.o main
+	-rm *.o hello_app

@@ -1,4 +1,6 @@
-CFLAGS = -fPIC -Wall -Wextra -g
+libdir?=/usr/lib64
+TARGET=$(destdir)$(libdir)
+CFLAGS = -fPIC -Wall -Wextra
 LDFLAGS = -shared
 VERSION = 1.0.0
 LIB_NAME = libapp
@@ -16,10 +18,11 @@ $(LIB_NAME): lib.o
 	$(CC) $(CFLAGS) -c $< -o $@
 	
 install:
-	cp ./$(LIB_NAME).so* %{libdir}
+	install -m 0755 -d ${TARGET}
+	install -m 0755 $(LIB_NAME).so* ${TARGET}/
 	
 uninstall:
-	rm -f %{libdir}/$(LIB_NAME).so*
+	rm -f ${TARGET}/$(LIB_NAME).so*
 
 clean:
 	-rm *.o *.so*

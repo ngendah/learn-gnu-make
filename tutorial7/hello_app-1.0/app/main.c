@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "../../tutorial7/lib/lib.h"
+#include "../lib/lib.h"
 
 
 int main(int argc, char* argv[])
