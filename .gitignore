@@ -1,4 +1,14 @@
 */main
 */**/main
+*/**/hello_app
 *.o
 *.so*
+*/**/BUILD/*
+*/**/RPM/*
+*/**/RPMS/*
+*/**/SOURCES/*
+*/**/BUILDROOT/*
+*.rpm
+*.tar.gz
+.cproject
+.project
