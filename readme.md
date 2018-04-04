@@ -10,8 +10,8 @@ My hope is that by the end of the tutorials you will have sufficient knowledge o
     * Build enviroments.
 3. Building an executable with sources structured in sub-directories.
 4. Building shared libraries.
-5. Building rpm files.
-6. Putting it all together.
+5. Putting it all together.
+6. Building rpm files.
 
 Author
 ========

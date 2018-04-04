@@ -4,6 +4,19 @@ This was a simple program, later on, to build something more useful and with a c
 It simplifies the compilation, building and maintaince of a project. Think of it as a chef who is given a recipe and ingredients and the goal is to make a culinary delicacy. The recipe is called a makefile, ingredients the various source files and dependent libraries, referred to as prerequisites, required to make the delights, our targets.
 GNU make, is therefore, a build automation tool which follows a set of rules telling it how, from a list of input source files and dependencies its to build targets.
 
+# Requirements
+The tutorials will need a linux distribution with `C`, `gnu make` and `install` programs installed.
+For example, on debian distributions they can be installed as follows,
+```
+$sudo apt-get install build-essentials
+```
+while on red-hat based distributions,
+```
+$sudo yum groups install -y  "Development Tools"
+```
+Tutorial 7 has an extra requirement that it will prefer an rpm based distribution, such as fedora.
+
+
 # Key concepts
 
 Make, which I use to mean GNU Make, requires a makefile. 
