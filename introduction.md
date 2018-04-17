@@ -1,21 +1,7 @@
 # Introduction
 When I first learnt to write my first program in C, it was a single C source file and constituted of a main function that printed to the screen the words 'hello world!'. It was compiled and built by executing the command `$cc -o <outputfile-name> <source file name>`. I have included it as my [first tutorial](tutorial0/hello_world.c).
 This was a simple program, later on, to build something more useful and with a couple of more source files, i required a more efficient approach. And that is why and when I learned the use of GNU make. 
-It simplifies the compilation, building and maintaince of a project. Think of it as a chef who is given a recipe and ingredients and the goal is to make a culinary delicacy. The recipe is called a makefile, ingredients the various source files and dependent libraries, referred to as prerequisites, required to make the delights, our targets.
-GNU make, is therefore, a build automation tool which follows a set of rules telling it how, from a list of input source files and dependencies its to build targets.
-
-# Requirements
-The tutorials will need a linux distribution with `C`, `gnu make` and `install` programs installed.
-For example, on debian distributions they can be installed as follows,
-```
-$sudo apt-get install build-essentials
-```
-while on red-hat based distributions,
-```
-$sudo yum groups install -y  "Development Tools"
-```
-Tutorial 7 has an extra requirement that it will prefer an rpm based distribution, such as fedora.
-
+It simplifies the compilation, building and maintaince of a project. Think of it as a chef who is given a recipe and ingredients and the goal is to make a culinary delicacy. The recipe is called a makefile, ingredients the various source files and dependent libraries, referred to as prerequisites, required to make the delights, our targets.GNU make, is therefore, a build automation tool which follows a set of rules telling it how, from a list of input source files and dependencies its to build targets.
 
 # Key concepts
 
@@ -93,7 +79,7 @@ There are 3 type of variables:
 		
 	* Simple variables
 	
-		They contain single values determined at the time of declaration. Its values are set using the simple operator `=` or using the `define` keyword.
+		They contain single values determined at parse time. Its values are set using the simple operator `:=` or using the `define` keyword.
 		```
 			VAR_NAME := value #format 1
 
@@ -137,5 +123,39 @@ There are 3 type of variables:
 
 ## Conditional statements
 
-They are control statements altering the linear make flow execution.
+They are control statements altering the linear make flow execution, and are evaluated during the makefile execution phase.
+Make defines the following conditional statements;
+* ifdef and ifndef
+    These statements are used to test if a variable has been defined or alternaltely has not been defined.
+    ```
+        ifdef (variable-name)
+            statements
+        else
+            statements
+        endif
+    ```
+* ifeq and ifneq
+    They are used to test if two values are equal or alternately not equal.
+    ```
+        ifeq (arg1, arg2)
+            statements
+        else
+            statements
+        endif
+    ```
 
+## Functions
+
+Functions provide an efficient way to encapsulate a group of make statements supposed to acomplish a task and can be cassified into pre-defined(in-built) and user-defined.
+Pre-defined functions are invoked by enclosing its name and arguments with the operators `$()`, while user defined functions are invoked using the pre-defined function `call`.
+When invoking a function with more than one argument, they are separated by a comma.
+* User functions defination
+    They are defined in a manner similar to recursive variable defination. For example,
+    ```
+        my_function = @echo $(1)
+    ```
+    Is a simple function which would print to the standard output its argument. Its argument values are accessed by the macro expansion, `$(number)`.
+    The function is invoked as follows,
+    ```
+        $(call my_function, "Hallo, world")
+    ```
