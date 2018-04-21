@@ -1,5 +1,6 @@
 Learn GNU make
 ===============
+
 This is work in progress; bear with me.
 The goal is to share my knowledge about GNU make and in the process help others who are trying to learn it.
 My hope is that by the end of the tutorials you will have sufficient knowledge of make and makefile to be able to use it to build your own programs.
@@ -33,11 +34,13 @@ Tutorial 7 has an extra requirement, which would prefer an rpm based distributio
 # whats covered
 
 1. Introduction to GNU make.
-2. Build an executable.
+2. Building an executable.
 3. Building an executable with sources structured in sub-directories.
 4. Building shared libraries.
-5. Putting it all together.
-6. Building rpm files.
+5. Building rpm files.
+
+The concepts are laid out in a tutorial structure, with some tutorial have more than one example.
+But first we start with a broad [introduction](./introduction.md) to make.
 
 
 LICENSE

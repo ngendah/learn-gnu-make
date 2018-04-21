@@ -1,7 +1,9 @@
-# Introduction
+Introduction
+==============
+
 When I first learnt to write my first program in C, it was a single C source file and constituted of a main function that printed to the screen the words 'hello world!'. It was compiled and built by executing the command `$cc -o <outputfile-name> <source file name>`. I have included it as my [first tutorial](tutorial0/readme.md).
 This was a simple program, later on, to build something more useful and with a couple of more source files, i required a more efficient approach. And that is why and when I learned the use of GNU make. 
-It simplifies the compilation, building and maintaince of a project. Think of it as a chef who is given a recipe and ingredients and the goal is to make a culinary delicacy. The recipe is called a makefile, ingredients the various source files and dependent libraries, referred to as prerequisites, required to make the delights, our targets.GNU make, is therefore, a build automation tool which follows a set of rules telling it how, from a list of input source files and dependencies its to build targets.
+It simplifies the compilation, building and maintenance of a project. Think of it as a chef who is given a recipe and ingredients and the goal is to make a culinary delicacy. The recipe is called a makefile, ingredients the various source files and dependent libraries, referred to as prerequisites, required to make the delights, our targets.GNU make, is therefore, a build automation tool which follows a set of rules telling it how, from a list of input source files and dependencies its to build targets.
 
 # Key concepts
 
@@ -12,7 +14,7 @@ A makefile is text file consisting of rules; in a predefined format, comments, v
 Make rules is a set of instructions telling it what to do and are classified into:
 
 * Static rules
-    This are rules that specify mutiple targets(filenames with extensions) to be built by the commands. The rule format is;
+    This are rules that specify multiple targets(filenames with extensions) to be built by the commands. The rule format is;
     ```
     targets: target-pattern: prerequisites-pattern
         ->command; command
@@ -37,7 +39,7 @@ In general, a rule is composed of 3 key elements:
     * file targets
 
         Consisting of a list of file names that are to be generated.
-        Targets can be a single target or mutiple targets. In cases where its more than one target a space is used to separate them.
+        Targets can be a single target or multiple targets. In cases where its more than one target a space is used to separate them.
 
     * phony targets
 
@@ -53,14 +55,14 @@ In general, a rule is composed of 3 key elements:
 
 3. Commands which are a list of actions to be taken on the input files in order to generate the target files.
 
-    Commands are listed on a new line and must be preceded by a single tab space, indicated by the use of the symbol '->'. When mutiple commands are to be listed on a single line they are separated by a semi-colon.
+    Commands are listed on a new line and must be preceded by a single tab space, indicated by the use of the symbol '->'. When multiple commands are to be listed on a single line they are separated by a semi-colon.
 
 Apart from rules makefiles can also include comments, variables, conditional statements and functions.
-When make is invoked on a directory it searches for the receipe file with the name, makefile or Makefile. Therefore its only appropriate to name make files as a such.
+When make is invoked on a directory it searches for the recipe file with the name, makefile or Makefile. Therefore its only appropriate to name make files as a such.
 
 ## Comments
 
-Comments are text preceded by a hash(#) upto but not including the beginning of a newline. They are ignored by the make process.
+Comments are text preceded by a hash(#) up to but not including the beginning of a newline. They are ignored by the make process.
 
 ## Variables
 
@@ -68,7 +70,7 @@ There are 3 type of variables:
 
 * User defined
 
-	They are variables defined by the makefile author and be categorized into:
+	They are variables defined by the makefile author and are categorized into:
 	
 	* Recursive variables
 	
@@ -126,7 +128,7 @@ There are 3 type of variables:
 They are control statements altering the linear make flow execution, and are evaluated during the makefile execution phase.
 Make defines the following conditional statements;
 * ifdef and ifndef
-    These statements are used to test if a variable has been defined or alternaltely has not been defined.
+    These statements are used to test if a variable has been defined or alternately has not been defined.
     ```
         ifdef (variable-name)
             statements
@@ -146,16 +148,16 @@ Make defines the following conditional statements;
 
 ## Functions
 
-Functions provide an efficient way to encapsulate a group of make statements supposed to acomplish a task and can be cassified into pre-defined(in-built) and user-defined.
+Functions provide an efficient way to encapsulate a group of make statements supposed to accomplish a task and can be classified into pre-defined(in-built) and user-defined.
 Pre-defined functions are invoked by enclosing its name and arguments with the operators `$()`, while user defined functions are invoked using the pre-defined function `call`.
 When invoking a function with more than one argument, they are separated by a comma.
-* User functions defination
-    They are defined in a manner similar to recursive variable defination. For example,
+* User functions definition
+    They are defined in a manner similar to recursive variable definition. For example,
     ```
         my_function = @echo $(1)
     ```
     Is a simple function which would print to the standard output its argument. Its argument values are accessed by the macro expansion, `$(number)`.
     The function is invoked as follows,
     ```
-        $(call my_function, "Hallo, world")
+        $(call my_function, "hallo, world")
     ```

@@ -1,4 +1,5 @@
-# Tutorial 0
+Tutorial 0
+===============
 
 Before executing any of the commands on this tutorial you will first need start your terminal program, and change your working directory to this directory.
 
@@ -22,16 +23,16 @@ and should print to screen the words `hallo, world`.
 
 # The makefile structure
 
-The file is made of one implict rule.
+The file is made of one implicit rule.
 This rule has a single file target `hello_world` with 1 prerequisite C source file, and its built by the command `cc -o hello_world hello_world.c`. The command is a C language compilation command.
 While this is not a tutorial into C-programming language, it would be rude of me not to explain it, :-).
 The command invokes the GNU C-compiler and instructs it to compile the C-source file `hello_world.c` and generate a binary output (`-o` option) file `hello_world`.  
 
 The makefile, while being very simple to write has the following short comings;
-1. There are repetations, for example the rule input file, `hello_world.c` is repeated on prerequisites and on the command.
-2. If we are to build more than one binary file or building the binary requiring more than just the source file, this approach would become a maintainance nightmare.
+1. There are repetitions, for example the rule input file, `hello_world.c` is repeated on prerequisites and on the command.
+2. If we are to build more than one binary file or building the binary requiring more than just the source file, this approach would become a maintenance nightmare.
 
-To reduce on the repeation you could argue I could probably leave out the prerequsites and write the rule as follows,
+To reduce on the repetition you could argue I could probably leave out the pre-requisites and write the rule as follows,
 ```
 hello_world:
     cc -o hello_world hello_world.c

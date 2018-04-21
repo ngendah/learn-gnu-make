@@ -1,10 +1,11 @@
 Tutorial 1
 ================
+
 In this tutorial I will introduce the following concepts;
 1. User-defined, automatic and in-built variables,
 2. wild-card rules, substitution references and how to specify object dependency.
 
-But first in make context what is a variable? its a memory region where a value, which could be a scalar or a complex object, is stored. This region is aliased by a name, and this name is referenced in our computations.
+But first in make context what is a variable? its a memory region where a value, which could be a scalar or a complex object, is stored. This region is aliased by a name; a variable name, and this name is referenced in our computations.
 
 Depending on the variable assignment operator, make will set its value, at different points of its execution phase;
 1. When the makefile is being parsed, referred as immediate and
