@@ -1,4 +1,5 @@
-# References
+References
+============
 
 1. GNU make book. http://www.gnu.org/software/make.
 2. The linux Programmer's Toolbox by John Fusco.

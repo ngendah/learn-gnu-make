@@ -1,6 +1,7 @@
-SRCS = $(shell ls *.c)
-OBJECTS = $(SRCS:.c=.o)
-CFLAGS = -g
+SRCS := main.c add.c subtract.c
+OBJECTS := $(SRCS:.c=.o)
+LDFLAGS :=
+CFLAGS := -Wall -g
 
 all: main
 
@@ -9,6 +10,8 @@ main: $(OBJECTS)
 
 $(OBJECTS): %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
+	
+main.o: add.o subtract.o
 
 .PHONY: clean
 

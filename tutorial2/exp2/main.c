@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-#include "add.h"
-#include "subtract.h"
+#include "../exp2/add.h"
+#include "../exp2/subtract.h"
 
 
 void main(int argc, char* argv[])

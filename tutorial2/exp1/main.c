@@ -1,12 +1,7 @@
 #include <stdio.h>
 
-#include "base.h"
-
-
-float add(const float x, const float y)
-{
-    return x + y;
-}
+#include "../exp1/add.h"
+#include "../exp1/subtract.h"
 
 
 void main(int argc, char* argv[])
