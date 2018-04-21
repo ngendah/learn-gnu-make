@@ -1,14 +1,11 @@
-SRCS := $(wildcard *.c)
-OBJECTS := $(SRCS:.c=.o)
-LDFLAGS :=
-CFLAGS = -g
+OBJECTS := main.o
 
 all: main
 
 main: $(OBJECTS)
 	$(CC) $(LDFLAGS) -o $@ $^
 
-$(OBJECTS): %.o: %.c
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 .PHONY: clean

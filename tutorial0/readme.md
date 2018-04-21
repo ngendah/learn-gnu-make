@@ -38,4 +38,4 @@ hello_world:
 ```
 touche, :-). Well, its that easy because this is a single source file 'project'.
 
-To improve on our make file, making it more expressive and easily maintanable, in the next tutorial we explore the use of variables.
+To improve on our make file, making it more expressive and easily maintainable, in the next tutorial we explore the use of variables and implicit rules.

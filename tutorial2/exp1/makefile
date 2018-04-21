@@ -1,11 +1,13 @@
+SRCS = $(shell ls *.c)
+OBJECTS = $(SRCS:.c=.o)
 CFLAGS = -g
 
 all: main
 
-main: main.o
-	$(CC) -o $@ $^ $(CFLAGS)
+main: $(OBJECTS)
+	$(CC) $(CFLAGS) -o $@ $^
 
-%.o: %.c
+$(OBJECTS): %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 .PHONY: clean
