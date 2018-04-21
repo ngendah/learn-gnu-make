@@ -39,8 +39,8 @@ Tutorial 7 has an extra requirement, which would prefer an rpm based distributio
 4. Building shared libraries.
 5. Building rpm files.
 
-The concepts are laid out in a tutorial structure, with some tutorial have more than one example.
-But first we start with a broad [introduction](./introduction.md) to make.
+The concepts are laid out in a tutorial structure, with some tutorial having more than one example.
+But first we start with a broad [introduction to make](./introduction.md).
 
 
 LICENSE
