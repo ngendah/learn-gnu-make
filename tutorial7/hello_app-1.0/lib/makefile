@@ -1,9 +1,9 @@
-libdir?=/usr/lib64
-TARGET=$(destdir)$(libdir)
-CFLAGS = -fPIC -Wall -Wextra
-LDFLAGS = -shared
-VERSION = 1.0.0
-LIB_NAME = libapp
+libdir ?= /usr/lib64
+TARGET := $(destdir)$(libdir)
+CFLAGS := -fPIC -Wall -Wextra
+LDFLAGS := -shared
+VERSION := 1.0.0
+LIB_NAME := libapp
 
 .PHONY: all clean install uninstall
 

@@ -1,6 +1,8 @@
-CFLAGS = -fPIC -Wall -Wextra -g
-LDFLAGS = -shared
-VERSION = 1.0.0
+CFLAGS := -fPIC -Wall -Wextra -g
+LDFLAGS := -shared
+VERSION := 1.0.0
+
+.PHONY: clean
 
 all: libapp
 
@@ -11,8 +13,6 @@ libapp: lib.o
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
-
-.PHONY: clean
 
 clean:
 	rm *.o *.so*

@@ -2,6 +2,8 @@ SRCS = $(shell ls *.c)
 OBJECTS = $(SRCS:.c=.o)
 CFLAGS = -g
 
+.PHONY: clean
+
 all: main
 
 main: $(OBJECTS)
@@ -9,8 +11,6 @@ main: $(OBJECTS)
 
 $(OBJECTS): %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
-
-.PHONY: clean
 
 clean:
 	rm *.o main

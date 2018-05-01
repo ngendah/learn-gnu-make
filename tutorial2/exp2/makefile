@@ -3,6 +3,8 @@ OBJECTS := $(SRCS:.c=.o)
 LDFLAGS :=
 CFLAGS = -g
 
+.PHONY: clean
+
 all: main
 
 main: $(OBJECTS)
@@ -10,8 +12,6 @@ main: $(OBJECTS)
 
 $(OBJECTS): %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
-
-.PHONY: clean
 
 clean:
 	rm *.o main

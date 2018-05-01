@@ -1,10 +1,10 @@
-bindir?=/usr/bin
-TARGET=$(destdir)$(bindir)
-APP_NAME = hello_app
-CFLAGS = -Wall
-LIB_APP_PATH = ../lib
-INCLUDES = -I $(LIB_APP_PATH)
-LDFLAGS = -L $(LIB_APP_PATH) -lapp -Wl,--enable-new-dtags
+bindir ?= /usr/bin
+TARGET := $(destdir)$(bindir)
+APP_NAME := hello_app
+CFLAGS := -Wall
+LIB_APP_PATH := ../lib
+INCLUDES := -I $(LIB_APP_PATH)
+LDFLAGS := -L $(LIB_APP_PATH) -lapp -Wl,--enable-new-dtags
 
 .PHONY: all clean install uninstall
 
