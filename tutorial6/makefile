@@ -1,6 +1,6 @@
 SUBDIRS = lib app
 
-.PHONY: subdirs $(SUBDIRS)
+.PHONY: subdirs $(SUBDIRS) clean
 
  subdirs: $(SUBDIRS)
 
@@ -8,8 +8,6 @@ SUBDIRS = lib app
 	$(MAKE) -C $@
 
 app: lib
-
-.CLEAN: clean
 
 clean:
 	for dir in $(SUBDIRS); do \

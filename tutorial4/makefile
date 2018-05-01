@@ -1,7 +1,9 @@
-INCLUDES = -I ../includes
-SRC_PATH = ./src
-CFLAGS = -g
-OBJECTS = $(SRC_PATH)/main.o
+INCLUDES := -I ../includes
+SRC_PATH := ./src
+CFLAGS := -g
+OBJECTS := $(SRC_PATH)/main.o
+
+.PHONY: clean
 
 all: main
 
@@ -10,8 +12,6 @@ main: $(OBJECTS)
 
 %.o: %.c
 	$(CC) $(INCLUDES) $(CFLAGS) -c $< -o $@
-
-.PHONY: clean
 
 clean:
 	rm $(SRC_PATH)/*.o main

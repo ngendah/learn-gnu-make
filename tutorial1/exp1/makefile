@@ -1,5 +1,7 @@
 OBJECTS := main.o
 
+.PHONY: clean
+
 all: main
 
 main: $(OBJECTS)
@@ -7,8 +9,6 @@ main: $(OBJECTS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
-
-.PHONY: clean
 
 clean:
 	rm *.o main
