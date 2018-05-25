@@ -31,7 +31,7 @@ $sudo dnf groups install -y  "Development Tools"
 
 Tutorial 7 has an extra requirement, which would prefer an rpm based distribution, such as Fedora, ;-).
 
-# whats covered
+# Whats covered
 
 1. Introduction to GNU make.
 2. Building an executable.
@@ -39,7 +39,7 @@ Tutorial 7 has an extra requirement, which would prefer an rpm based distributio
 4. Building shared libraries.
 5. Building rpm files.
 
-The concepts are laid out in a tutorial structure, with some tutorial having more than one example.
+The concepts are laid out in a tutorial structure, with some tutorials having more than one example.
 But first we start with a broad [introduction to make](./introduction.md).
 
 
