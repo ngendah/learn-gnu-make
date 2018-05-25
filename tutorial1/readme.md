@@ -4,19 +4,19 @@ Tutorial 1
 In this tutorial I will introduce the following concepts;
 
 1. User-defined, automatic and in-built variables,
-2. implicit(wild card) rules, substitution references, object dependency and
-3. special in-built targets.
+2. Implicit (wild card) rules, substitution references, object dependency and
+3. Special in-built targets.
 
 A make variable is a region in memory where a value, whether a scalar or a complex object, is stored. This region is aliased by a name; a variable name, and this name is referenced in the makefile.
 
 Depending on the variable assignment operator, make will set its value, at different points of its execution phase;
 
-1. When the makefile is being parsed, referred as immediate and
-2. When the makefile is being executed, referred as deferred.
+1. When the makefile is being parsed, it is referred to as immediate and
+2. When the makefile is being executed, it is referred to as deferred.
 
 In certain cases, instead of listing out dependencies or targets directly, we want them to be evaluated based on some existing condition.
-In this cases substition references come to our aid. Given a string, the macro will search for the occurance of the search 'string' and replace it with the replacement 'string'.
-However, the replacement is not a complete word/string replacement, but rather a character replacement, and instead of replacing all occurences of the character, it only replaces its last occurence.
+In these cases substition references come to our aid. Given a string, the macro will search for the occurrence of the search 'string' and replace it with the replacement 'string'.
+However, the replacement is not a complete word/string replacement, but rather a character replacement, and instead of replacing all occurrences of the character, it only replaces its last occurrence.
 
 The syntax is:
 
@@ -25,7 +25,7 @@ ${<variable to be evaluated>: <what to search for>=<what to replace with>}
 ```
 
 for instance `${src:.c=.o}`, will replace all occurences of character `c` with `o`, on the list of words stored on the variable `src`.
-If more than a word needs to be evaluated, the list should be space separated.
+If more than one word needs to be evaluated, the list should be space separated.
 
 An object dependency rule asserts the relationships between various objects being built and their build order.
 
@@ -44,33 +44,33 @@ The [makefile](./exp1/makefile) in this example is made of;
 
 The rules are laid out in the order of dependency requirements. Its build execution will proceed as follows;
 
-1. make will start by evaluating `all` rule. The rule has one dependency, `main`, which initially, does not exist.
-    However, there is a rule which to tell make how to build it; the `main` rule.
+1. make will start by evaluating the `all` rule. The rule has one dependency, `main`, which initially, does not exist.
+    However, there is a rule which tells make how to build it; the `main` rule.
 
 2. the main rule, has further dependencies, assigned to the `OBJECTS` variable.
-    These dependencies also do not exist, to build them make will require a rule. The rule is the wild-card rule.
-    Make will match the pattern on the objects and invoke it.
+    These dependencies also do not exist, to build them make will require a rule. The rule is the wild-card rule;
+    make will match the pattern on the objects and invoke it.
 
 3. using the wild-card rules, make will build `OBJECTS`.
 
-once the objects are built, it will work its way upwards;
+Once the objects are built, it will work its way upwards;
 
-1. the main rule required `OBJECT`, and they now exists make will try and the run command on the main rule. The command will build main target.
-2. the main target now exists, will finally try and evaluate the commands on the `all` to try and build it. There are no command here, so it will exit with success.
+1. the main rule required `OBJECT`, and since it now exists make will try and the run command on the main rule. The command will build the main target.
+2. the main target now exists and will finally try and evaluate the commands on the `all` to try and build it. There are no commands here, so it will exit with success.
 
-If we are to think of the dependency requirements as being laid out in binary tree, the the execution flow would be depth-first.
+If we are to think of the dependency requirements as being laid out in a binary tree, the execution flow would be depth-first.
 
 The makefile also has a special rule target named `.PHONY`, with the dependency target `clean`. The `clean` rule is used to remove built objects.
 
-### variables
+#### make variables
 The first variable we observe is the user-defined variable `OBJECT`, whose value is assigned with the immediate operator `:=`.
 
 Next, are the in-built variables `CC`, `LDFLAGS` and `CFLAGS`.
-The `CC` variable evaluates to the set default C-compiler, while the `LDFLAGS` and `CFLAGS` have no values, will evaluate empty strings.
+The `CC` variable evaluates to the set default C-compiler, while the `LDFLAGS` and `CFLAGS` have no values,and will evaluate to empty strings.
 Variable can also be overriden, for example the empty variable CFLAGS can be set a valid value by simply using the variable assignment operator, for instance `CFLAGS=-g`.
 
-## wild card rules
-As the project C-sources increases the number of objects required to be built increase proportionately.
+#### wild card rules
+As the project C-sources increases, the number of objects required to be built increases proportionately.
 We would probably want to give make the objects we want built and a rule, made up of search and replace patterns, on how to build them from the sources files.
 In this example I have used it to tell make how to build objects from its sources;
 
@@ -82,8 +82,8 @@ In this example I have used it to tell make how to build objects from its source
 whenever make comes across an object dependency ending with the characters `.o`, it will locate its equivalent object name ending with `.c` and use it on its commands.
 The `%` is the wild-card character, a set of characters which in this case are not to be substituted.
 
-## special in-built rules
-What would happen for example there was a command which would create a file named `all`?
+#### special in-built rules
+What would happen if there was a command which would create a file named `all`?
 
 lets try it.
 Alter the `all` rule as follows:
@@ -101,13 +101,14 @@ With some changes having taken place you expect the rebuild process to proceed a
 make: 'all' is up to date.
 ```
 
-Before, make builds a target it check if;
+Before, make builds a target it checks if;
 
 1. it exists and
 2. its up to date.
 
 In this case the target `all` exists and its up to date. If you remove the `all` file, everything proceeds normally.
-What to do if you have a dependency matching a rule?, in such cases you mark those rules as phony, using the special in-built rule `.PHONY`.
+What would you do if you have a dependency matching a rule? 
+In such cases you mark those rules as phony, using the special in-built rule `.PHONY`.
 
 ## Example 2:
 This tutorial example demostrates;
