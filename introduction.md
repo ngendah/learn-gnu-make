@@ -1,14 +1,18 @@
 Introduction
 ==============
 
-When I first learnt to write my first program in C, it was a single C source file and constituted of a main function that printed to the screen the words 'hello world!'. It was compiled and built by executing the command `$cc -o <outputfile-name> <source file name>`. I have included it as my [first tutorial](tutorial0/readme.md).
-This was a simple program, later on, to build something more useful and with a couple of more source files, I required a more efficient approach. And this is why and when I learned the use of GNU make. 
-It simplifies the compilation, building and maintenance of a project. Think of it as a chef who is given a recipe and ingredients and whose goal is to make a culinary delicacy. Analogically, the recipe is called a makefile; ingredients the various source files and dependent libraries which are (collectively referred to as prerequisites) required to make the delicacy. GNU make is therefore a build automation tool that follows a set of rules telling it how, from a list of input source files and dependencies, to build targets.
+When I first learnt to write my first program in C, it was a single C source file and constituted of a main function that printed to the screen the words 'hello world!'.
+It was compiled and built by executing the command `$cc -o <outputfile-name> <source file name>`.
+I have included a modified version of it as my [first tutorial](tutorial0/readme.md).
+This was a simple program, later on, to build something more useful and with a couple of more source files, I required a more efficient approach.
+And this is why and when I learned the use of GNU make which simplified the compilation, building and maintenance of a project.
+Think of it as a chef who is given a recipe and ingredients and whose goal is to make a culinary delicacy. Analogically, the recipe is called a makefile; ingredients the various source files and dependent libraries which are (collectively referred to as prerequisites) required to make the delicacy. GNU make is therefore a build automation tool that follows a set of rules telling it how, from a list of input source files and dependencies, to build targets.
 
 # Key concepts
 
 Make, which I use to mean GNU make, requires a makefile. 
 A makefile is a text file consisting of rules in a predefined format that contains comments, variables, conditional statements and functions.
+When make is invoked on a directory it searches for the recipe file with the name makefile or Makefile.
 
 ## Rules
 Make rules are a set of instructions telling it what to do and are classified into:
@@ -58,11 +62,12 @@ In general, a rule is composed of 3 key elements:
     Commands are listed on a new line and must be preceded by a single tab space, indicated by the use of the symbol '->'. When multiple commands are to be listed on a single line they are separated by a semi-colon.
 
 Apart from rules, makefiles can also include comments, variables, conditional statements and functions.
-When make is invoked on a directory it searches for the recipe file with the name, makefile or Makefile. Therefore its only appropriate to name makefiles as such.
 
 ## Comments
 
-Comments are text preceded by a hash(#) up to but not including the beginning of a newline. They are ignored by the make process.
+Comments are explanations added to the make file in order to aid in the understanding what the purpose of the entire program or sections of it.
+They are ignored by the make process.
+Comments are preceded by a hash(#) and end with a newline.
 
 ## Variables
 

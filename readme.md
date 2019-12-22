@@ -1,13 +1,13 @@
 Learn GNU make
 ===============
 
-This is work in progress; bear with me.
 The goal is to share my knowledge about GNU make and in the process help others who are trying to learn it.
-My hope is that by the end of the tutorials you will have sufficient knowledge of make and makefile to be able to use it to build your own programs.
+My hope is that by the end of the tutorials you will have sufficient knowledge of make and makefile to be 
+able to use it to build your own programs.
 
 # Prerequisites
-The tutorials assumes you have a modest working knowledge of the Linux operating system commands and the version control system, Git, :-).
-You will also need to clone the project onto your computer.
+The tutorials assumes you have a modest working knowledge of the Linux operating system commands and the version control system, Git.
+You will also need to clone the tutorials onto your computer.
 
 # Requirement 
 In order to go through the tutorials you will require to install the following programs;
@@ -29,19 +29,17 @@ or
 $sudo dnf groups install -y  "Development Tools"
 ```
 
-Tutorial 7 has an extra requirement, which would prefer an rpm based distribution, such as Fedora, ;-).
+Tutorial 7 has an extra requirement, which would prefer an rpm based distribution, such as Fedora.
 
-# Whats covered
+# What's covered
 
 1. Introduction to GNU make.
 2. Building an executable.
 3. Building an executable with sources structured in sub-directories.
 4. Building shared libraries.
-5. Building rpm files.
+5. Building rpm files. 
 
 The concepts are laid out in a tutorial structure, with some tutorials having more than one example.
-But first we start with a broad [introduction to make](./introduction.md).
-
 
 LICENSE
 ==========

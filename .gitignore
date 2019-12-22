@@ -3,6 +3,7 @@
 */**/hello_app
 *.o
 *.so*
+*.hex
 */**/BUILD/*
 */**/RPM/*
 */**/RPMS/*
@@ -10,5 +11,8 @@
 */**/BUILDROOT/*
 *.rpm
 *.tar.gz
+*.kdev4
 .cproject
 .project
+.idea
+.settings/
