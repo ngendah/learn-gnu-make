@@ -1,4 +1,4 @@
-SRCS := main.c add.c subtract.c
+SRCS := main.c add.c
 OBJECTS := $(SRCS:.c=.o)
 LDFLAGS :=
 CFLAGS := -Wall -g

@@ -15,7 +15,7 @@ Depending on the variable assignment operator, make will set its value, at diffe
 2. When the makefile is being executed, it is referred to as deferred.
 
 In certain cases, instead of listing out dependencies or targets directly, we want them to be evaluated based on some existing condition.
-In these cases substition references come to our aid. Given a string, the macro will search for the occurrence of the search 'string' and replace it with the replacement 'string'.
+In these cases substitution references come to our aid. Given a string, the macro will search for the occurrence of the search 'string' and replace it with the replacement 'string'.
 However, the replacement is not a complete word/string replacement, but rather a character replacement, and instead of replacing all occurrences of the character, it only replaces its last occurrence.
 
 The syntax is:
@@ -29,8 +29,9 @@ If more than one word needs to be evaluated, the list should be space separated.
 
 An object dependency rule asserts the relationships between various objects being built and their build order.
 
-## Example 1:
-This tutorial example demostrates:
+## Example 1
+
+This tutorial example demonstrates:
 
 1. make variables,
 2. wild card and special in-built rules.
@@ -67,7 +68,7 @@ The first variable we observe is the user-defined variable `OBJECT`, whose value
 
 Next, are the in-built variables `CC`, `LDFLAGS` and `CFLAGS`.
 The `CC` variable evaluates to the set default C-compiler, while the `LDFLAGS` and `CFLAGS` have no values,and will evaluate to empty strings.
-Variable can also be overriden, for example the empty variable CFLAGS can be set a valid value by simply using the variable assignment operator, for instance `CFLAGS=-g`.
+Variable can also be overridden, for example the empty variable CFLAGS can be set a valid value by simply using the variable assignment operator, for instance `CFLAGS=-g`.
 
 #### wild card rules
 As the project C-sources increases, the number of objects required to be built increases proportionately.
@@ -94,7 +95,7 @@ all: main
 ```
 
 execute `make clean` before executing `make`. As usual everything will proceed as expected and the `main` target will be built.
-Update the C-source file timestamps to mimick some changes on it, by executing the command `touch main.c`, and re-execute `make`.
+Update the C-source file timestamp's to mimic some changes on it, by executing the command `touch main.c`, and re-execute `make`.
 With some changes having taken place you expect the rebuild process to proceed as normally, but instead you are met with the message;
 
 ```
@@ -104,17 +105,37 @@ make: 'all' is up to date.
 Before, make builds a target it checks if;
 
 1. it exists and
-2. its up to date.
+2. its up to date, that is, the built file includes the most current changes. 
 
-In this case the target `all` exists and its up to date. If you remove the `all` file, everything proceeds normally.
-What would you do if you have a dependency matching a rule? 
-In such cases you mark those rules as phony, using the special in-built rule `.PHONY`.
+In this case the target `all` exists and its up to date.If you remove the `all` file, everything proceeds normally.
 
-## Example 2:
-This tutorial example demostrates;
+## Example 2
+
+This tutorial example demonstrates;
 
 1. substitution references and
 2. object dependency.
 
-### makefile structure
+The example we create function that will use to `add` two numbers. This functionality is contained on the header file `add.h` and implemented on the source file `add.c`.
+`main.c` uses this function to add two numbers.
 
+The overall structure follow that of `example1`;
+
+- Variables
+- Rules
+
+### Substitution references
+
+In this example we use substitution references to specify the objects that we would want `make` to build.
+
+```
+SRCS := main.c add.c
+OBJECTS := $(SRCS:.c=.o)
+``` 
+
+The variable `SRC` holds the list of source files we have in the project,
+while `OBJECTS` will hold the objects to be linked into the final executable.
+
+`make` by default builds objects corresponding to the source file, we use su
+
+### Object dependency
