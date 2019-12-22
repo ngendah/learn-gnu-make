@@ -1,7 +1,8 @@
-Tutorial 0
-===============
-
-Before executing any of the commands on this tutorial you will first need start up your terminal program, and change your working directory to this directory.
+Tutorial 0 (Basics)
+==================
+ 
+Before executing any of the commands on this tutorial you will first need to start up your terminal program,
+and change your working directory to this directory.
 
 In this tutorial we build a simple program that prints to the standard output the words `hello, world`.
 
@@ -15,7 +16,7 @@ To build, execute the make command as follows;
 $ make
 ```
 
-It will generate a set of files but most importantly a binary file named `hello_world`, which can be executed as follows,
+It will generate a set of files but importantly a binary file named `hello_world`, which can be executed as follows,
 ```
 $./hello_world
 ```

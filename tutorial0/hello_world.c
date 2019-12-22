@@ -1,8 +1,7 @@
 #include <stdio.h>
 
-// Kernighan and Ritchie's classic
 int main(int argc, char* argv[])
 {
-    printf("hello, world");
+    printf("hello, world\n");
     return 0;
 }
