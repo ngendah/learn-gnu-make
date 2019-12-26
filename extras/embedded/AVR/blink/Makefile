@@ -1,6 +1,6 @@
 CC := avr-gcc
 HEX := avr-objcopy
-CFLAGS := -mmcu=atmega8
+CFLAGS := -mmcu=atmega16
 HEXFLAGS := -j .text -j .data -O ihex
 
 .PHONY: clean
@@ -8,10 +8,10 @@ HEXFLAGS := -j .text -j .data -O ihex
 all: main
 
 main: main.o
-	$(HEX) $(HEXLFAGS) $^ $@.hex 
+	$(HEX) $(HEXLFAGS) $^ $@.hex
 	
 %.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 	
 clean:
-	rm *.hex *.o main
+	rm *.hex *.o
