@@ -16,3 +16,6 @@
 .project
 .idea
 .settings/
+*.i
+*.s
+*.elf
