@@ -1,9 +1,4 @@
-/* ledblink.c, an LED blinking program */
 #define F_CPU 1000000ul
-
-extern DDRC;
-extern PORTC;
-extern PC2;
 
 #include <avr/io.h>
 #include <util/delay.h>

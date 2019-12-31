@@ -13,9 +13,9 @@ void keypad_init(void) {
 }
 
 void keypad_read(void (*on_keypress)(unsigned char)) {
-	static unsigned char read_cycles[] = {0x70, 0xb0, 0xd0, 0xe0};
-	static unsigned char key;
-	static unsigned char *p_rc;
+	unsigned char read_cycles[] = {0x70, 0xb0, 0xd0, 0xe0};
+	unsigned char key;
+	unsigned char *p_rc;
 	key = 0x0f;
 	p_rc = read_cycles;
 	while (1) {
@@ -23,8 +23,11 @@ void keypad_read(void (*on_keypress)(unsigned char)) {
 		_delay_ms(1);
 		key = (*p_rc | (PINA & 0x0f));
 		if ((key & 0x0f) != 0x0f) {
-			(*on_keypress)(key);
-			_delay_ms(5);
+			_delay_ms(10);
+			if ((key & 0x0f) != 0x0f){
+				(*on_keypress)(key);
+				_delay_ms(5);
+			}
 		}
 		p_rc++;
 		if (*p_rc == 0) {
