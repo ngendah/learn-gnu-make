@@ -12,7 +12,8 @@ You will also need to clone the tutorials onto your computer.
 # Requirement 
 In order to go through the tutorials you will require to install the following programs;
 * `C`,
-* `gnu make` and 
+* `gnu make`,
+* `nasm` and 
 * `install`.
 
 On debian based distributions they can be installed as follows,
