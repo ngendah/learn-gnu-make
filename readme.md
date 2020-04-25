@@ -32,16 +32,31 @@ $sudo dnf groups install -y  "Development Tools"
 
 Tutorial 7 has an extra requirement, which would prefer an rpm based distribution, such as Fedora.
 
-# What's covered
 
-1. Introduction to GNU make.
-2. Building an executable.
-3. Building an executable with sources structured in sub-directories.
-4. Building shared libraries.
-5. Building rpm files. 
+Tutorials
+===========
 
-The concepts are laid out in a tutorial structure, with some tutorials having more than one example.
+[Introduction: The syntax](./intro/readme.md)
+
+[Tutorial 1: Basics](./tutorial1/readme.md)
+
+[Tutorial 2: Variables and rules](./tutorial2/readme.md)
+
+[Tutorial 3: Shell and wildcard functions](./tutorial3/readme.md)
+
+[Tutorial 4: Building executables](./tutorial4/readme.md)
+
+[Tutorial 5: Building shared libraries](./tutorial5/readme.md)
+
+[Tutorial 6: Building an installable package with RPM](./tutorial6/readme.md)
+
+[Tutorial 7: Assembly and embedded](./tutorial7/readme.md)
+
+[References](./references/readme.md)
+
 
 LICENSE
 ==========
-Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for the full license text.
+
+All code is licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for the full license text.
+All non-source code licensed under the Creative Commons BY-NC-SA 4.0 license.
