@@ -9,7 +9,7 @@ able to use it to build your own programs.
 The tutorials assumes you have a modest working knowledge of the Linux operating system commands and the version control system, Git.
 You will also need to clone the tutorials onto your computer.
 
-# Requirement 
+# Requirements 
 In order to go through the tutorials you will require to install the following programs;
 * `C`,
 * `gnu make`,
@@ -59,4 +59,5 @@ LICENSE
 ==========
 
 All code is licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for the full license text.
+
 All non-source code licensed under the Creative Commons BY-NC-SA 4.0 license.
