@@ -1,6 +1,6 @@
-SUBDIRS = libopencm3
+SUBDIRS = libopencm3 blink
 
-.PHONY: all clean $(SUBDIRS)
+.PHONY: all
 
  all: $(SUBDIRS)
 
