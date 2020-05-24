@@ -7,7 +7,11 @@ able to use it to build your own programs.
 
 # Prerequisites
 The tutorials assumes you have a modest working knowledge of the Linux operating system commands and the version control system, Git.
-You will also need to clone the tutorials onto your computer.
+To clone the tutorials onto your computer;
+
+```
+git clone --recurse-submodules GIT_REPO_URL
+```
 
 # Requirements 
 In order to go through the tutorials you will require to install the following programs;
@@ -30,7 +34,11 @@ or
 $sudo dnf groups install -y  "Development Tools"
 ```
 
-Tutorial 7 has an extra requirement, which would prefer an rpm based distribution, such as Fedora.
+Tutorial 6 and 7 have a few additional requirements;
+
+1. RPM files build tools and
+
+2. AVR and ARM build tools.
 
 
 Tutorials
@@ -44,7 +52,7 @@ Tutorials
 
 [Tutorial 3: Shell and wildcard functions](./tutorial3/readme.md)
 
-[Tutorial 4: Building executables](./tutorial4/readme.md)
+[Tutorial 4: Building executables](./tutoial4/readme.md)
 
 [Tutorial 5: Building shared libraries](./tutorial5/readme.md)
 
