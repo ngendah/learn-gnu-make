@@ -1,4 +1,4 @@
-SUBDIRS = libopencm3 blink
+SUBDIRS = libopencm3 blink blink-rtos
 
 .PHONY: all
 
