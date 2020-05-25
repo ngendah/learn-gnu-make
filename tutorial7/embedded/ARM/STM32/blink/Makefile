@@ -1,6 +1,6 @@
 SRCS := $(wildcard *.c)
 OBJECTS := $(SRCS:.c=.o)
-BINARY := blink
+BINARY = blink
 OPENCM3_DIR = ../libopencm3
 OPENCM3_LIB = opencm3_stm32f4
 LDSCRIPT = ./stm32f4-discovery.ld
@@ -42,7 +42,7 @@ TGT_CFLAGS	+= -fno-common -ffunction-sections -fdata-sections
 TGT_LDFLAGS		+= --static -nostartfiles
 TGT_LDFLAGS		+= -T$(LDSCRIPT)
 TGT_LDFLAGS		+= $(ARCH_FLAGS) $(DEBUG)
-TGT_LDFLAGS		+= -Wl,-Map=$(*).map -Wl,--cref
+TGT_LDFLAGS		+= -Wl,-Map=$*.map -Wl,--cref
 TGT_LDFLAGS		+= -Wl,--gc-sections
 
 .PHONY: elf bin clean
@@ -54,7 +54,7 @@ bin: $(BINARY).bin
 %.bin: %.elf
 	$(OBJCOPY) -Obinary $*.elf $*.bin
 
-%.elf: $(OBJECTS) $(LDSCRIPT)
+%.elf: $(OBJECTS)
 	$(LD) $(TGT_LDFLAGS) $(LDFLAGS) $(OBJECTS) $(LDLIBS) -o $*.elf
 
 %.o %.d: %.c
