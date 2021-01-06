@@ -5,4 +5,4 @@ Building shared library
 
 2. [Shared library with distributable headers](./exp2/makefile)
 
-3. [An executable file with a shared library](./exp2/makefile) 
+3. [An executable file with a shared library](./exp3/makefile) 
