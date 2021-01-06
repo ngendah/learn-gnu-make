@@ -52,7 +52,7 @@ Tutorials
 
 [Tutorial 3: Shell and wildcard functions](./tutorial3/readme.md)
 
-[Tutorial 4: Building executables](./tutoial4/readme.md)
+[Tutorial 4: Building executables](./tutorial4/readme.md)
 
 [Tutorial 5: Building shared libraries](./tutorial5/readme.md)
 
