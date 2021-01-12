@@ -60,6 +60,8 @@ Tutorials
 
 [Tutorial 7: Assembly and embedded](./tutorial7/readme.md)
 
+[Tutorial 8: Autotools, Autoconf](./tutorial8/)
+
 [References](./references/readme.md)
 
 

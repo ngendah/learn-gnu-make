@@ -23,3 +23,8 @@
 *.map
 *.d
 *.swp
+*/**/*.cache/
+*.status
+*.log
+configure
+makefile.config
